@@ -41,11 +41,25 @@ const GlobalStyles = () => {
           margin: 0;
           padding: 0;
         }
+
+        li {
+  list-style: none;
+}
         img {
           display: block;
           max-width: 100%;
           height: auto;
         }
+        a {
+  text-decoration: none;
+}
+
+link {
+  text-decoration: none;
+}
+
+
+
       `}
         />
     );

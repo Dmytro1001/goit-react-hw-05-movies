@@ -1,35 +1,28 @@
 import Home from '../pages/Home/Home';
 import Movies from '../pages/Movies/Movies';
-import { NavLink, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import GlobalStyles from './GlobalStyles';
 import MovieDetails from '../pages/MovieDetails/MovieDetails';
+import Cast from '../components/Cast/Cast';
+import Reviews from '../components/Reviews/Reviews';
+import SharedLayout from 'components/SharedLayout/SharedLayout';
+import NotFoundPage from '../pages/NotFoundPage/NotFoundPage';
 
 export const App = () => {
   return (
-    <div>
-      <div>
-        <NavLink to="/">Logo</NavLink>
-      </div>
-      <nav>
-        <ul>
-          <li>
-            <NavLink to="/">Home</NavLink>
-          </li>
-          <li>
-            <NavLink to="/movies">Movies</NavLink>
-          </li>
-        </ul>
-      </nav>
-
+    <>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/movies" element={<Movies />} />
-        <Route path="/movies/:movieId" element={<MovieDetails />} />
-        {/* <Route path="/movies/:movieId/cast" element={<Cast />} />
-        <Route path="/movies/:movieId/reviews" element={<Reviews />} />
-        <Route path="*" element={<NotFound />} /> */}
+        <Route path="/" element={<SharedLayout />}>
+          <Route index element={<Home />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/movies/:movieId" element={<MovieDetails />}>
+            <Route path="cast" element={<Cast />} />
+            <Route path="reviews" element={<Reviews />} />
+          </Route>
+          <Route path="*" element={<NotFoundPage />} />
+        </Route>
       </Routes>
       <GlobalStyles />
-    </div>
+    </>
   );
 };

@@ -21,7 +21,7 @@ const Home = () => {
 
   console.log(movies);
 
-  return <>{movies && <MoviesList movies={movies} />}</>;
+  return <main>{movies && <MoviesList movies={movies} />}</main>;
 };
 
 export default Home;

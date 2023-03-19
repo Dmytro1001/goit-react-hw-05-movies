@@ -26,4 +26,37 @@ const moviesSearchFetch = async (query) => {
     };
 };
 
-export { moviesTrendingFetch, moviesSearchFetch };
+const moviesDetailsFetch = async (id) => {
+    try {
+        const response = await axios.get(
+            `${BASE_URL}/movie/${id}?api_key=${API_KEY}&language=en-US`
+        );
+        return response.data;
+    } catch (error) {
+        console.error(error);
+    };
+};
+
+const movieCastFetch = async (id) => {
+    try {
+        const response = await axios.get(
+            `${BASE_URL}/movie/${id}/credits?api_key=${API_KEY}&language=en-US`
+        );
+        return response.data;
+    } catch (error) {
+        console.error(error);
+    };
+};
+
+const movieReviewsFetch = async (id) => {
+    try {
+        const response = await axios.get(
+            `${BASE_URL}/movie/${id}/reviews?api_key=${API_KEY}&language=en-US`
+        );
+        return response.data;
+    } catch (error) {
+        console.error(error);
+    };
+};
+
+export { moviesTrendingFetch, moviesSearchFetch, moviesDetailsFetch, movieCastFetch, movieReviewsFetch };
