@@ -26,6 +26,6 @@ export { MoviesItem };
 MoviesItem.propTypes = {
   id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
-  poster: PropTypes.string.isRequired,
+  poster: PropTypes.string,
   vote: PropTypes.number.isRequired,
 };

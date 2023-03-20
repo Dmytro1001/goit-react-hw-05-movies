@@ -13,10 +13,10 @@ const MovieDetails = () => {
     moviesDetailsFetch(movieId).then(data => setMovies(data));
   }, [movieId]);
 
-  console.log(movies);
+  // console.log(movies);
 
   return (
-    <main>
+    <>
       {movies && <AboutMovie movies={movies} />}
       <Wrapper>
         <Text>Additional information:</Text>
@@ -30,7 +30,7 @@ const MovieDetails = () => {
         </List>
       </Wrapper>
       <Outlet />
-    </main>
+    </>
   );
 };
 

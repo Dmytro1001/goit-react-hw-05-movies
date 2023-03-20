@@ -12,7 +12,7 @@ const Cast = () => {
     movieCastFetch(movieId).then(data => setCast(data.cast));
   }, [movieId]);
 
-  console.log(cast);
+  // console.log(cast);
 
   if (cast !== '') {
     return (

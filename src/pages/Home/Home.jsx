@@ -5,23 +5,13 @@ import { MoviesList } from 'components/MoviesList/MoviesList';
 const Home = () => {
   const [movies, setMovies] = useState([]);
 
-  // const mapper = data => {
-  //   // console.log(data);
-  //   return data.map(({ poster_path, id, original_title, vote_average }) => ({
-  //     poster_path,
-  //     id,
-  //     original_title,
-  //     vote_average,
-  //   }));
-  // };
-
   useEffect(() => {
     moviesTrendingFetch().then(data => setMovies(data));
   }, []);
 
-  console.log(movies);
+  // console.log(movies);
 
-  return <main>{movies && <MoviesList movies={movies} />}</main>;
+  return <>{movies && <MoviesList movies={movies} />}</>;
 };
 
 export default Home;

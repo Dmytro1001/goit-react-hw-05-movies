@@ -1,39 +1,17 @@
 import { PropTypes } from 'prop-types';
-import { useState } from 'react';
 import { BsSearch } from 'react-icons/bs';
-import { toast } from 'react-toastify';
 import { SearchForm, SearchFormBtn, SearchFormInput } from './SearchBar.styles';
 
-export const SearchBar = ({ onSubmit }) => {
-  const [value, setValue] = useState('');
-
-  const handleChange = e => {
-    setValue(e.currentTarget.value.toLowerCase());
-  };
-
-  const handleSubmit = e => {
-    e.preventDefault();
-
-    if (value.trim() === '') {
-      toast.info('Type something to find', {
-        position: 'top-center',
-        theme: 'colored',
-      });
-      return;
-    }
-    onSubmit(value.trim());
-    setValue('');
-  };
-
+const SearchBar = ({ value, onChange, onSubmit }) => {
   return (
-    <SearchForm onSubmit={handleSubmit}>
+    <SearchForm onSubmit={onSubmit}>
       <SearchFormInput
         type="text"
         autoComplete="off"
         autoFocus
         placeholder="Enter a movie title"
         value={value}
-        onChange={handleChange}
+        onChange={onChange}
       />
       <SearchFormBtn type="submit" aria-label="Search">
         <BsSearch size={20} />
@@ -43,7 +21,9 @@ export const SearchBar = ({ onSubmit }) => {
 };
 
 SearchBar.propTypes = {
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired,
 };
 
-// export default { SearchBar };
+export default SearchBar;
