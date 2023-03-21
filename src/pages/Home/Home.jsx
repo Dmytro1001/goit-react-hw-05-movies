@@ -9,8 +9,6 @@ const Home = () => {
     moviesTrendingFetch().then(data => setMovies(data));
   }, []);
 
-  // console.log(movies);
-
   return <>{movies && <MoviesList movies={movies} />}</>;
 };
 

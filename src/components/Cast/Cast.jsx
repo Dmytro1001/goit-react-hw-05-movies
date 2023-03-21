@@ -1,3 +1,4 @@
+import { PropTypes } from 'prop-types';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { movieCastFetch } from '../../services/api';
@@ -11,8 +12,6 @@ const Cast = () => {
   useEffect(() => {
     movieCastFetch(movieId).then(data => setCast(data.cast));
   }, [movieId]);
-
-  // console.log(cast);
 
   if (cast !== '') {
     return (
@@ -42,6 +41,14 @@ const Cast = () => {
       </>
     );
   }
+};
+
+Cast.propTypes = {
+  cast: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    profile_path: PropTypes.string.isRequired,
+    character: PropTypes.string,
+  }),
 };
 
 export default Cast;

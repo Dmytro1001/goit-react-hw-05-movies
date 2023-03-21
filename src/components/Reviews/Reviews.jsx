@@ -1,3 +1,4 @@
+import { PropTypes } from 'prop-types';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { movieReviewsFetch } from '../../services/api';
@@ -30,6 +31,14 @@ const Reviews = () => {
       </>
     );
   }
+};
+
+Reviews.propTypes = {
+  review: PropTypes.shape({
+    id: PropTypes.number,
+    content: PropTypes.string,
+    updated_at: PropTypes.number,
+  }),
 };
 
 export default Reviews;

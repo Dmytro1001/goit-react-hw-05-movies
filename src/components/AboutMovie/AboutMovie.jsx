@@ -1,3 +1,4 @@
+import { PropTypes } from 'prop-types';
 import noPoster from '../../images/no_poster.png';
 import {
   MovieContainer,
@@ -8,6 +9,7 @@ import {
   Item,
   Vote,
 } from './AboutMovie.styles';
+
 const AboutMovie = ({ movies }) => {
   const {
     poster_path: poster,
@@ -20,6 +22,7 @@ const AboutMovie = ({ movies }) => {
     overview: about,
     genres,
   } = movies;
+
   return (
     <MovieContainer>
       <Poster
@@ -53,7 +56,7 @@ const AboutMovie = ({ movies }) => {
           </Text>
         </Item>
         <Item>
-          <About>ABOUT</About>
+          <About>About</About>
           <Text>
             <span>{about}</span>
           </Text>
@@ -61,6 +64,20 @@ const AboutMovie = ({ movies }) => {
       </ul>
     </MovieContainer>
   );
+};
+
+AboutMovie.propTypes = {
+  movies: PropTypes.shape({
+    poster_path: PropTypes.string,
+    title: PropTypes.string,
+    release_date: PropTypes.string,
+    original_title: PropTypes.string,
+    vote_average: PropTypes.number,
+    vote_count: PropTypes.number,
+    popularity: PropTypes.number,
+    overview: PropTypes.string,
+    genres: PropTypes.array,
+  }),
 };
 
 export default AboutMovie;

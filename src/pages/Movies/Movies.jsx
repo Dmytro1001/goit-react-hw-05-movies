@@ -53,11 +53,9 @@ const Movies = () => {
     })();
   }, [searchParams, movies.length]);
 
-  console.log(movies);
-
   return (
     <>
-      <ToastContainer />
+      <ToastContainer autoClose={3000} />
       <SearchBar
         value={query}
         onChange={handleChange}

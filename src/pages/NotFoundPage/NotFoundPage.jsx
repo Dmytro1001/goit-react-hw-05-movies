@@ -1,14 +1,19 @@
-import { Link } from 'react-router-dom';
+import {
+  NotFoundBox,
+  NotFoundText404,
+  Link,
+  NotFoundText,
+} from './NotFoundPage.styles';
 
 const NotFoundPage = () => {
   return (
-    <div>
-      <h2>404</h2>
-      <p>Page not found</p>
-      <p>
-        Please go back to the<Link>HOME PAGE</Link>
-      </p>
-    </div>
+    <NotFoundBox>
+      <NotFoundText404>404</NotFoundText404>
+      <NotFoundText>Page not found</NotFoundText>
+      <NotFoundText>
+        Please go back to the<Link to="/">HOME PAGE</Link>
+      </NotFoundText>
+    </NotFoundBox>
   );
 };
 

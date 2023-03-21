@@ -1,13 +1,14 @@
-import { MainContainer } from './Main.styles';
+import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-// import { Suspense } from 'react';
+import { MainContainer } from './Main.styles';
+import { Loader } from 'components/Loader/Loader';
 
 const Main = () => {
   return (
     <MainContainer>
-      {/* <Suspense fallback={<LoaderBallTriangle />}> */}
-      <Outlet />
-      {/* </Suspense> */}
+      <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense>
     </MainContainer>
   );
 };

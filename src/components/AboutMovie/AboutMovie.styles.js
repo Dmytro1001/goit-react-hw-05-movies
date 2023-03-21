@@ -22,7 +22,9 @@ font-size: 32px;
 
 export const About = styled.p`
 font-size: 20px;
+text-transform: uppercase;
   font-weight: 700;
+  margin-bottom: 5px;
 `;
 
 export const Text = styled.p`
@@ -48,6 +50,4 @@ font-weight: 400;
 
 export const Item = styled.li`
  /* margin-bottom: 10px; */
-&:last-of-type(1){
-   margin-bottom: 10px; 
-};`
+ `

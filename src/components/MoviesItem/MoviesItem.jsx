@@ -7,8 +7,6 @@ const MoviesItem = ({ id, title, poster, vote }) => {
   const rating = vote.toFixed(1);
   const location = useLocation();
 
-  console.log(location);
-
   return (
     <Item>
       <Link to={`/movies/${id}`} state={{ from: location }}>
