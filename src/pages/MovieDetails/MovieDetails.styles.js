@@ -1,6 +1,14 @@
 import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 
+export const Container = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+`;
+
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: wrap;
