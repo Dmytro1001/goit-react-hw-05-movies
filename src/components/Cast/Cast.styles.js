@@ -7,6 +7,8 @@ export const List = styled.ul`
   gap: 20px;
   max-width: 1200px;
   padding: 20px 30px;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 export const Img = styled.img`
