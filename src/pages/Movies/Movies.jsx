@@ -19,7 +19,8 @@ const Movies = () => {
     e.preventDefault();
     if (query.trim() === '') {
       return toast.warn('The search string cannot be empty!', {
-        position: toast.POSITION.TOP_CENTER,
+        position: 'top-center',
+        theme: 'colored',
       });
     }
 
@@ -52,7 +53,7 @@ const Movies = () => {
     })();
   }, [searchParams, movies.length]);
 
-  // console.log(movies);
+  console.log(movies);
 
   return (
     <>

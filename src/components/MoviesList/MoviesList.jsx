@@ -7,12 +7,12 @@ const MoviesList = ({ movies }) => {
   return (
     <>
       <List>
-        {movies.map(({ id, original_title, poster_path, vote_average }) => {
+        {movies.map(({ id, title, poster_path, vote_average }) => {
           return (
             <MoviesItem
               key={id}
               id={id}
-              title={original_title}
+              title={title}
               poster={poster_path}
               vote={vote_average}
             />
